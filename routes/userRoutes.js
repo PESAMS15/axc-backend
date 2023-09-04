@@ -1,5 +1,5 @@
 const express = require("express")
-const { signup, signIn, createTicket, createConcert, createSeat, getAllTickets, getTicketById, updateTicketById, deleteTicketById, verifyUserToken, imageUpload, getEvents, getConcert, getSeats, getSeatsById, post, postTicket } = require("../controllers/userController")
+const { signup, signIn, createTicket, createConcert, getTrans, createSeat, getAllTickets, getTicketById, updateTicketById, deleteTicketById, verifyUserToken, imageUpload, getEvents, getConcert, getSeats, getSeatsById, post, postTicket } = require("../controllers/userController")
 const { validate } = require("../middlewares/validator")
 const { userValidationSchema } = require("../middlewares/userValidationSchema")
 
@@ -10,6 +10,7 @@ userRouter.post("/signup", validate(userValidationSchema), signup)
 userRouter.post("/signin", signIn)
 userRouter.post("/tick", createTicket)
 userRouter.post("/post", postTicket)
+//  userRouter.get("/", getAllUsers);
 userRouter.post("/tickets", createConcert)
 userRouter.get("/verify", verifyUserToken)
 userRouter.post("/seats", createSeat)
@@ -21,6 +22,8 @@ userRouter.post("/seat", getSeats)
 userRouter.post("/getseat", getSeatsById)
 userRouter.get("/event/:id", getConcert)
 userRouter.post("/updateticket",  updateTicketById)
+userRouter.get("/trans", getTrans)
 userRouter.post("/deleteticket",  deleteTicketById)
+
 
 module.exports = userRouter

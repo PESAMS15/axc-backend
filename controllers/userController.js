@@ -261,6 +261,18 @@ const postTicket = async (req,res, next)=>{
         res.status(500).send({ message: 'Transaction Failed' });
     }
 }
+const getTrans = async (req,res,next) =>{
+    try {
+        const transactions = await transactModel.find()
+        res.status(200).send(transactions)
+
+        
+    } catch (error) {
+        console.log("Error", error)
+
+        
+    }
+}
 
 
-module.exports = {signup, signIn, verifyUserToken, postTicket, getConcert, imageUpload, getSeatsById, getSeats, createTicket, getEvents, createConcert, createSeat, getAllTickets, getTicketById, updateTicketById, deleteTicketById}
+module.exports = {signup, signIn, verifyUserToken, getTrans, postTicket, getConcert, imageUpload, getSeatsById, getSeats, createTicket, getEvents, createConcert, createSeat, getAllTickets, getTicketById, updateTicketById, deleteTicketById}
