@@ -28,6 +28,7 @@ const signup = async (req, res, next)=>{
            }
     } catch (error) {
         console.log(error)
+        res.status(500).send({message: "An error occured"})
         next(error)
         
     }
@@ -53,7 +54,8 @@ const signIn = async (req, res, next) => {
         return res.status(200).send({ message: `Welcome ${result.firstName}`, status: true, token })
 
     } catch (error) {
-        console.log(error)
+        // console.log(error)
+        res.status(500).send({message: "Internal Server error"})
         next(error)
     }
 }
