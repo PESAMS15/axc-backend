@@ -6,6 +6,7 @@ const bcryptjs = require("bcryptjs");
 const { generateToken, verifyToken } = require("../services/sessionService");
 const seatsModel = require("../models/seatsModel");
 const transactModel = require("../models/transactionModel");
+const { sendMail } = require("../utils/mailer");
 
 
 const signup = async (req, res, next)=>{
