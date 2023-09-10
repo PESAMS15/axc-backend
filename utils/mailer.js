@@ -4,15 +4,18 @@ const sendMail = async (email, firstName) => {
     const contactTemplate = `
     <div>
         
-            <h1 style="margin-bottom: 100px; color: gray; text-align: center">
+            <h1 style="margin-bottom: 100px; color: blue; text-align: center">
 
-                hi ${firstName}, welcome to AXC tickets  Limited. 
+                Hi ${firstName}, welcome to AXC tickets  Limited. 
             </h1>
-            <p style="margin-top: 30px; text-align:center; width: 80%;>
-            We're glad you're here. As the biggest ticket provider in the world we're continually striving to meet fans wherever they are. We're here to help you get tickets to the live events you love.
+            <p style="margin-top: 70px; text-align:center; width: 80%;>
+            We're glad you're here. As an upcoming ticket provider company we're continually striving to meet fans wherever they are. We're here to help you get tickets to the live events you love.
             </p>
             <p style="margin-top: 30px; text-align:center; width: 80%;>
             When you buy directly from AXC Tickets you can be confident your tickets are real and our exclusive Verified Tickets are 100% guaranteed to get you in every time.    
+            </p>
+            <p>
+                
             </p>
             <p>We thank you for putting your trust in us.</p>
 
