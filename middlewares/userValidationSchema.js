@@ -4,14 +4,13 @@ const userValidationSchema = yup.object().shape({
     .string()
     .min(2, "firstname is too short")
     .max(50, "Too long")
-    .required("firstname is required")
-    .matches(/^[a-zA-Z0-9]+$/, "Username must be alphanumeric"),
+    .required("firstname is required"),
+   
     lastName : yup
     .string()
     .min(2, "lastname is too short")
     .max(50, "Too long")
-    .required("lastname is required")
-    .matches(/^[a-zA-Z0-9]+$/, "Username must be alphanumeric"),
+    .required("lastname is required"),
     email: yup
     .string()
     .email("Invalid email")
@@ -19,8 +18,8 @@ const userValidationSchema = yup.object().shape({
     password: yup
     .string()
     .required("Password is required")
-    .min(8, "password is too short")
-    .matches(/^[a-zA-Z0-9]+$/, "Password cannot have a symbol")
+    .min(8, "password must be at least 8 characters"),
+    
 })
 
 module.exports = {userValidationSchema}
